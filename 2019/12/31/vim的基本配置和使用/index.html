@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>vim的基本配置和使用 | yyd</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Linux">
+    <meta name="description" content="配置vimcd ~    --&gt;    vim .vimrc     set nu        显示行号     set ts&#x3D;4    tab键等于4个空格键     set autoindent    下面一行跟随上面一行的缩进而缩进     set expandtab         set ruler    显示光标位置     set nohls    代码不高亮     syn">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vim的基本配置和使用">
+<meta property="og:url" content="http://yoursite.com/2019/12/31/vim%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:site_name" content="yyd">
+<meta property="og:description" content="配置vimcd ~    --&gt;    vim .vimrc     set nu        显示行号     set ts&#x3D;4    tab键等于4个空格键     set autoindent    下面一行跟随上面一行的缩进而缩进     set expandtab         set ruler    显示光标位置     set nohls    代码不高亮     syn">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-12-31T13:19:04.522Z">
+<meta property="article:modified_time" content="2019-12-31T13:37:49.833Z">
+<meta property="article:author" content="yydafx">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+	
+	
+
+
+<meta name="generator" content="Hexo 4.1.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">yydafx</h5>
+          <a href="mailto:2362941478@qq.com" title="2362941478@qq.com" class="mail">2362941478@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yydafx" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">vim的基本配置和使用</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">vim的基本配置和使用</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-12-31T13:19:04.522Z" itemprop="datePublished" class="page-time">
+  2019-12-31
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Linux-vim/">Linux vim</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#配置vim"><span class="post-toc-number">1.</span> <span class="post-toc-text">配置vim</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#从命令行模式进入到插入模式"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">从命令行模式进入到插入模式</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#扩展模式下命令"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">扩展模式下命令</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#快速移动光标"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">快速移动光标</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#删除"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">删除</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#复制"><span class="post-toc-number">1.0.5.</span> <span class="post-toc-text">复制</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#粘贴"><span class="post-toc-number">1.0.6.</span> <span class="post-toc-text">粘贴</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#复原"><span class="post-toc-number">1.0.7.</span> <span class="post-toc-text">复原</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#重做"><span class="post-toc-number">1.0.8.</span> <span class="post-toc-text">重做</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#高级操作"><span class="post-toc-number">1.0.9.</span> <span class="post-toc-text">高级操作</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-vim的基本配置和使用"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">vim的基本配置和使用</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-12-31 21:19:04" datetime="2019-12-31T13:19:04.522Z"  itemprop="datePublished">2019-12-31</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Linux-vim/">Linux vim</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h4 id="配置vim"><a href="#配置vim" class="headerlink" title="配置vim"></a>配置vim</h4><pre><code>cd ~    --&gt;    vim .vimrc
+    set nu        显示行号
+    set ts=4    tab键等于4个空格键
+    set autoindent    下面一行跟随上面一行的缩进而缩进
+    set expandtab    
+    set ruler    显示光标位置
+    set nohls    代码不高亮
+    syntax on    语法高亮</code></pre><h6 id="从命令行模式进入到插入模式"><a href="#从命令行模式进入到插入模式" class="headerlink" title="从命令行模式进入到插入模式"></a>从命令行模式进入到插入模式</h6><pre><code>a    --&gt;    进入插入模式并在光标之后进行添加。
+i    --&gt;    进入插入模式并在光标之前进行插入。
+o    --&gt;    进入插入模式并在当前（光标所在）行之下开启新的一行。</code></pre><h6 id="扩展模式下命令"><a href="#扩展模式下命令" class="headerlink" title="扩展模式下命令"></a>扩展模式下命令</h6><pre><code>:w    --&gt;    将文件写入/存入磁盘
+:q    --&gt;    退出vi编译器
+:wq    --&gt;    将文件写入/存入磁盘并退出vi编译器</code></pre><h6 id="快速移动光标"><a href="#快速移动光标" class="headerlink" title="快速移动光标"></a>快速移动光标</h6><pre><code>在文件中的位置
+    G    --&gt;    光标移动到这个文件最后一行
+    NG    --&gt;    光标移动到这个文件第N行(N是数字)
+    gg    --&gt;    光标移动到这个文件第一行
+
+在屏幕中的位置
+    H    --&gt;    光标移动到这个屏幕的最上方的那一行的第一个字符
+    M    --&gt;    光标移动到这个屏幕的中央的那一行的第一个字符
+    L    --&gt;    光标移动到这个屏幕的最下一行的那一行的第一个字符</code></pre><h6 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h6><pre><code>dd    --&gt;    删除光标所在行
+Ndd    --&gt;    删除光标所在的向下N行(N是数字)</code></pre><h6 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h6><pre><code>yy    --&gt;    复制光标所在的那一行
+Nyy    --&gt;    复制光标坐在的向下N行(N是数字)</code></pre><h6 id="粘贴"><a href="#粘贴" class="headerlink" title="粘贴"></a>粘贴</h6><pre><code>yy    --&gt;    复制光标所在的那一行
+Nyy    --&gt;    复制光标坐在的向下N行(N是数字)</code></pre><h6 id="复原"><a href="#复原" class="headerlink" title="复原"></a>复原</h6><pre><code>u    --&gt;    复原前一个操作</code></pre><h6 id="重做"><a href="#重做" class="headerlink" title="重做"></a>重做</h6><pre><code>Ctrl+c    --&gt;    重做上一个操作</code></pre><h6 id="高级操作"><a href="#高级操作" class="headerlink" title="高级操作"></a>高级操作</h6><pre><code>vim -d 文件1 文件2    --&gt;    同时打开两个文件来对比
+
+vim 文件1 文件2 ..    --&gt;    同时打开多个文件
+    ls: 可查看当前打开多少个文件
+    b 标号：切换操作文件
+    sp/vs：将当前窗口水平/垂直方向拆分
+    Ctrl+w：在命令模式下切换窗口</code></pre>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-12-31T13:37:49.833Z" itemprop="dateUpdated">2019-12-31 21:37:49</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="yydafx">
+            yydafx
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/12/31/vim%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/&title=《vim的基本配置和使用》 — yyd&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/12/31/vim%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/&title=《vim的基本配置和使用》 — yyd&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/31/vim%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vim的基本配置和使用》 — yyd&url=http://yoursite.com/2019/12/31/vim%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/12/31/vim%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/12/31/Django%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E7%9A%84%E4%B8%89%E4%B8%AA%E6%96%B9%E5%BC%8F/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Django项目创建的三个方式</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/yyd_wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/yyd_wechat.jpg" data-alipay="/img/yyd_alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>This blog is licensed under a <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>yydafx &copy; 2015 - 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/12/31/vim%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/&title=《vim的基本配置和使用》 — yyd&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/12/31/vim%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/&title=《vim的基本配置和使用》 — yyd&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/31/vim%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vim的基本配置和使用》 — yyd&url=http://yoursite.com/2019/12/31/vim%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/12/31/vim%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/12/31/vim%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
