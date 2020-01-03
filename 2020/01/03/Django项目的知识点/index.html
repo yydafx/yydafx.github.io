@@ -14,25 +14,24 @@
     
     
     
-    <title>Linux上基本软件的安装 | yydafx</title>
+    <title>Django项目遇到的知识点 | yydafx</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Linux,软件安装">
-    <meta name="description" content="安装Python1)安装依赖项 yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel libffi-devel2)下载Python3源代码 wget https">
+    <meta name="keywords" content="Django">
+    <meta name="description" content="Django常用的命令创建一个项目：django-admin startproject 项目名 创建一个app：python manage.py startapp app名 运行项目：python manage.py runserver 进入django shell终端：python manage.py shell 生成迁移文件：python manage.py makemigrations po">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux上基本软件的安装">
-<meta property="og:url" content="http://yoursite.com/2019/12/31/Linux%E4%B8%8A%E5%9F%BA%E6%9C%AC%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/index.html">
+<meta property="og:title" content="Django项目遇到的知识点">
+<meta property="og:url" content="http://yoursite.com/2020/01/03/Django%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/index.html">
 <meta property="og:site_name" content="yydafx">
-<meta property="og:description" content="安装Python1)安装依赖项 yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel libffi-devel2)下载Python3源代码 wget https">
+<meta property="og:description" content="Django常用的命令创建一个项目：django-admin startproject 项目名 创建一个app：python manage.py startapp app名 运行项目：python manage.py runserver 进入django shell终端：python manage.py shell 生成迁移文件：python manage.py makemigrations po">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-12-31T12:30:27.380Z">
-<meta property="article:modified_time" content="2020-01-03T12:38:40.541Z">
+<meta property="article:published_time" content="2020-01-03T11:34:37.761Z">
+<meta property="article:modified_time" content="2020-01-03T12:38:16.452Z">
 <meta property="article:author" content="杨毓德">
-<meta property="article:tag" content="Linux">
-<meta property="article:tag" content="软件安装">
+<meta property="article:tag" content="Django">
 <meta name="twitter:card" content="summary">
     
     <link rel="shortcut icon" href="/favicon.ico">
@@ -122,7 +121,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Linux上基本软件的安装</div>
+        <div class="flex-col header-title ellipsis">Django项目遇到的知识点</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -144,11 +143,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Linux上基本软件的安装</h1>
+        <h1 class="title">Django项目遇到的知识点</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-12-31T12:30:27.380Z" itemprop="datePublished" class="page-time">
-  2019-12-31
+                <time datetime="2020-01-03T11:34:37.761Z" itemprop="datePublished" class="page-time">
+  2020-01-03
 </time>
 
 
@@ -167,18 +166,18 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装Python"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装Python</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装Nginx"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装Nginx</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装Redis官方最新版"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装Redis官方最新版</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装git最新版"><span class="post-toc-number">4.</span> <span class="post-toc-text">安装git最新版</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装MySQL"><span class="post-toc-number">5.</span> <span class="post-toc-text">安装MySQL</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Django常用的命令"><span class="post-toc-number">1.</span> <span class="post-toc-text">Django常用的命令</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#关于数据库"><span class="post-toc-number">2.</span> <span class="post-toc-text">关于数据库</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#配置jet"><span class="post-toc-number">3.</span> <span class="post-toc-text">配置jet</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#配置上传头像"><span class="post-toc-number">4.</span> <span class="post-toc-text">配置上传头像</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Django随机验证码"><span class="post-toc-number">5.</span> <span class="post-toc-text">Django随机验证码</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#对密码进行加密"><span class="post-toc-number">6.</span> <span class="post-toc-text">对密码进行加密</span></a></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-Linux上基本软件安装"
+<article id="post-Django项目的知识点"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Linux上基本软件的安装</h1>
+        <h1 class="post-card-title">Django项目遇到的知识点</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-12-31 20:30:27" datetime="2019-12-31T12:30:27.380Z"  itemprop="datePublished">2019-12-31</time>
+            <time class="post-time" title="2020-01-03 19:34:37" datetime="2020-01-03T11:34:37.761Z"  itemprop="datePublished">2020-01-03</time>
 
             
 
@@ -191,47 +190,92 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h4 id="安装Python"><a href="#安装Python" class="headerlink" title="安装Python"></a>安装Python</h4><p>1)安装依赖项</p>
-<pre><code>yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel libffi-devel</code></pre><p>2)下载Python3源代码</p>
-<pre><code>wget https://www.python.org/ftp/python/3.7.6/Python-3.7.6.tar.xz</code></pre><p>3)解压缩和解归档</p>
-<pre><code>xz -d Python-3.7.6.tar.xz
-tar -xvf Python-3.7.6.tar</code></pre><p>4)执行安装前的配置</p>
-<pre><code>cd Python-3.7.6
-    ./configure --prefix=/usr/local/python37 --enable-optimizations</code></pre><p>5)构建和安装</p>
-<pre><code>make &amp;&amp; make install</code></pre><p>6)注册环境变量</p>
-<pre><code>vim ~/.bash_profile
-    PATH=$PATH:/usr/local/python37/bin
-    export PATH </code></pre><h4 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h4><p>1)安装nginx</p>
-<pre><code>yum install -y nginx</code></pre><p>2)启动和关闭nginx</p>
-<pre><code>systemctl start nginx
-systemctl stop nginx</code></pre><h4 id="安装Redis官方最新版"><a href="#安装Redis官方最新版" class="headerlink" title="安装Redis官方最新版"></a>安装Redis官方最新版</h4><p>1) 下载</p>
-<pre><code>wget http://download.redis.io/releases/redis-5.0.7.tar.gz</code></pre><p>2) 解压解归档</p>
-<pre><code>gunzip redis-5.0.7.tar.gz
-tar -xvf redis-5.0.7.tar</code></pre><p>3) 编译执行    </p>
-<pre><code>cd redis-5.0.7
-make &amp;&amp; make install</code></pre><h4 id="安装git最新版"><a href="#安装git最新版" class="headerlink" title="安装git最新版"></a>安装git最新版</h4><p>1) 下载资源包</p>
-<pre><code>wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.24.1.tar.xz</code></pre><p>2) 解压和解归档</p>
-<pre><code>xz -d git-2.24.1.tar.xz
-tar -xf git-2.24.1.tar</code></pre><p>3) 执行安装前的配置</p>
-<pre><code>cd git-2.24.1
-yum install -y curl libcurl-devel
-./configure --prefix=/usr/local</code></pre><p>4) 编译执行</p>
-<pre><code>make &amp;&amp; make install</code></pre><h4 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h4><p>1)清除掉所有跟mariadb相关的东西 </p>
-<pre><code>yum list installed | grep mariadb | awk &apos;{print $1}&apos; | xargs yum erase -y</code></pre><p>2)清理之前的数据和日志文件 </p>
-<pre><code>rm -rf /var/lib/mysql
-rm -f/var/log/mysqld.log</code></pre><p>3)下载MySQL官方提供的RPM包并解归档 </p>
-<pre><code>wget https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.28-1.el7.x86_64.rpm-bundle.tar
-tar -xf mysql-5.7.28-1.el7.x86_64.rpm-bundle.tar</code></pre><p>4)使用rpm包管理工具安装MySQL(下面一定按着顺序执行) </p>
-<pre><code>rpm -ivh mysql-community-common-...rpm
-rpm -ivh mysql-community-libs-...rpm
-rpm -ivh mysql-community-client-...rpm
-rpm -ivh mysql-community-server-...rpm</code></pre><p>5)启动服务器查看随机密码</p>
-<pre><code>systemctl start mysqld
-cat /var/log/mysqld.log | grep password</code></pre><p>6)用客户工具连接MySQL</p>
-<pre><code>mysql -u root -p</code></pre><p>7)修改root用户口令</p>
-<pre><code>set global validate_password_policy=0;    --&gt;    将密码强度设置最低
-set global validate_password_length=6;    --&gt;    将密码长度设为6位
-alter user &apos;root&apos;@&apos;localhost&apos; identified by &apos;123456&apos;;    --&gt;    修改root的密码为123456</code></pre>
+            <h4 id="Django常用的命令"><a href="#Django常用的命令" class="headerlink" title="Django常用的命令"></a>Django常用的命令</h4><pre><code>创建一个项目：django-admin startproject 项目名
+创建一个app：python manage.py startapp app名
+运行项目：python manage.py runserver
+进入django shell终端：python manage.py shell
+生成迁移文件：python manage.py makemigrations pools
+生成数据表：python manage.py migrate
+创建管理员账号：python manage.py createsuperuser
+修改密码：python manage.py changepassword</code></pre><h4 id="关于数据库"><a href="#关于数据库" class="headerlink" title="关于数据库"></a>关于数据库</h4><pre><code>用Django开发一个项目我们应该给这个项目创建一个用户，并且只给予这个用户操作这个数据库的权限。
+
+创建用户：
+    create user &apos;yydafx&apos;@&apos;%&apos; identified by &apos;123456&apos;;
+
+授予权限：
+    部分权限：grant insert, delete, update, select, create, alter on django02.* to &apos;django02&apos;@&apos;%&apos;;
+    所有权限：grant all privileges on django02.* to &apos;django02&apos;@&apos;%&apos;;</code></pre><h4 id="配置jet"><a href="#配置jet" class="headerlink" title="配置jet"></a>配置jet</h4><pre><code>现在Django的后台操作基本都是要jet
+
+1)安装jet：
+    pip install django-jet -i https://pypi.doubanio.com/simple
+
+2)在INSTALLED_APPS的admin的前面注册jet：
+    &apos;jet&apos;
+
+3)执行迁移
+    python manage.py migrate jet
+
+4)URL配置
+    from django.conf.urls import include
+
+    path(&apos;jet/&apos;, include(&apos;jet.urls&apos;, &apos;jet&apos;)),</code></pre><h4 id="配置上传头像"><a href="#配置上传头像" class="headerlink" title="配置上传头像"></a>配置上传头像</h4><pre><code>1)新建文件夹
+    在项目的根目录下新建media文件夹
+
+2)setting配置：
+    MEDIA_ROOT = os.path.join(BASE_DIR, &apos;media&apos;)
+    MEDIA_URL = &apos;/media/&apos;
+
+3)URL配置及写法
+    from django.conf import settings
+    from django.conf.urls.static import static
+
+    urlpatterns = [
+    path(&apos;admin/&apos;, admin.site.urls),
+    ...
+    ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+    4)模板语言引入图片的写法
+    {{ teacher.photo.url }}</code></pre><h4 id="Django随机验证码"><a href="#Django随机验证码" class="headerlink" title="Django随机验证码"></a>Django随机验证码</h4><pre><code>1)在需要验证码路径的URL填写获取随机验证码陆游(/captcha/)
+    &lt;img id=&quot;code&quot; src=&quot;/captcha/&quot; height=&quot;33&quot;&gt;
+
+2)点击验证码图片切换下一张
+    // 加载完页面执行箭头函数
+    $(() =&gt; {
+        $(&apos;#code&apos;).on(&apos;click&apos;, (evt) =&gt; {
+            // 点击切换验证码
+            $(evt.target).attr(&apos;src&apos;, &apos;/captcha/?&apos; + Math.random())
+        })
+    });
+
+3)复制captcha.py和fonts(字体文件)到项目的app文件目录下
+
+4)生成随机数(k值必须传入，否则会报错)
+    一般会新建一个utils.py封装函数
+
+    import random
+
+    ALL_CHARS = &apos;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&apos;
+
+    def random_text(length=4):
+        return &apos;&apos;.join(random.choices(ALL_CHARS, k=length))
+
+5)views函数书写
+    def get_captcha(request):
+    &quot;&quot;&quot;获取验证码图片&quot;&quot;&quot;
+    code = random_text()
+    image_data = Captcha.instance().generate(code)
+    return HttpResponse(image_data, content_type=&apos;image/png&apos;)</code></pre><h4 id="对密码进行加密"><a href="#对密码进行加密" class="headerlink" title="对密码进行加密"></a>对密码进行加密</h4><pre><code>一般会新建一个utils.py封装函数
+import hashlib
+
+def to_md5_hex(content):
+&quot;&quot;&quot;生成hd5摘要&quot;&quot;&quot;
+    return hashlib.md5(content.encode()).hexdigest()
+
+在model.py的User类的里面：
+# 重写save方法(对密码进行md5摘要)
+def save(self):
+    self.password = to_md5_hex(self.password)
+    super().save()</code></pre>
         </div>
 
         <blockquote class="post-copyright">
@@ -239,7 +283,7 @@ alter user &apos;root&apos;@&apos;localhost&apos; identified by &apos;123456&apo
     <div class="content">
         
 <span class="post-time">
-    最終更新：<time datetime="2020-01-03T12:38:40.541Z" itemprop="dateUpdated">2020-01-03 20:38:40</time>
+    最終更新：<time datetime="2020-01-03T12:38:16.452Z" itemprop="dateUpdated">2020-01-03 20:38:16</time>
 </span><br>
 
 
@@ -263,7 +307,7 @@ alter user &apos;root&apos;@&apos;localhost&apos; identified by &apos;123456&apo
 
         <div class="post-footer">
             
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" rel="tag">软件安装</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/" rel="tag">Django</a></li></ul>
 
 
             
@@ -273,7 +317,7 @@ alter user &apos;root&apos;@&apos;localhost&apos; identified by &apos;123456&apo
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/12/31/Linux%E4%B8%8A%E5%9F%BA%E6%9C%AC%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/&title=《Linux上基本软件的安装》 — yydafx&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/01/03/Django%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/&title=《Django项目遇到的知识点》 — yydafx&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -283,22 +327,22 @@ alter user &apos;root&apos;@&apos;localhost&apos; identified by &apos;123456&apo
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/12/31/Linux%E4%B8%8A%E5%9F%BA%E6%9C%AC%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/&title=《Linux上基本软件的安装》 — yydafx&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/01/03/Django%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/&title=《Django项目遇到的知识点》 — yydafx&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/31/Linux%E4%B8%8A%E5%9F%BA%E6%9C%AC%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/01/03/Django%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Linux上基本软件的安装》 — yydafx&url=http://yoursite.com/2019/12/31/Linux%E4%B8%8A%E5%9F%BA%E6%9C%AC%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Django项目遇到的知识点》 — yydafx&url=http://yoursite.com/2020/01/03/Django%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/12/31/Linux%E4%B8%8A%E5%9F%BA%E6%9C%AC%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/01/03/Django%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -318,16 +362,16 @@ alter user &apos;root&apos;@&apos;localhost&apos; identified by &apos;123456&apo
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2019/12/31/Django%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E7%9A%84%E4%B8%89%E4%B8%AA%E6%96%B9%E5%BC%8F/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Django项目创建的三个方式</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2020/01/02/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A42/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Linux基本命令2</h4>
+      </a>
+    </div>
   
 </nav>
 
@@ -423,7 +467,7 @@ alter user &apos;root&apos;@&apos;localhost&apos; identified by &apos;123456&apo
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/12/31/Linux%E4%B8%8A%E5%9F%BA%E6%9C%AC%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/&title=《Linux上基本软件的安装》 — yydafx&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/01/03/Django%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/&title=《Django项目遇到的知识点》 — yydafx&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -433,22 +477,22 @@ alter user &apos;root&apos;@&apos;localhost&apos; identified by &apos;123456&apo
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/12/31/Linux%E4%B8%8A%E5%9F%BA%E6%9C%AC%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/&title=《Linux上基本软件的安装》 — yydafx&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/01/03/Django%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/&title=《Django项目遇到的知识点》 — yydafx&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/31/Linux%E4%B8%8A%E5%9F%BA%E6%9C%AC%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/01/03/Django%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Linux上基本软件的安装》 — yydafx&url=http://yoursite.com/2019/12/31/Linux%E4%B8%8A%E5%9F%BA%E6%9C%AC%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Django项目遇到的知识点》 — yydafx&url=http://yoursite.com/2020/01/03/Django%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/12/31/Linux%E4%B8%8A%E5%9F%BA%E6%9C%AC%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/01/03/Django%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -459,7 +503,7 @@ alter user &apos;root&apos;@&apos;localhost&apos; identified by &apos;123456&apo
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/12/31/Linux%E4%B8%8A%E5%9F%BA%E6%9C%AC%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2020/01/03/Django%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/" alt="微信分享二维码">
 </div>
 
 
