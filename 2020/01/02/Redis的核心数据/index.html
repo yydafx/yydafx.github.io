@@ -14,24 +14,25 @@
     
     
     
-    <title>Django项目创建的三个方式 | yydafx</title>
+    <title>Redis的核心数据 | yydafx</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Django">
-    <meta name="description" content="安装Django： pip install django&#x3D;&#x3D;2.1.14 -i https:&#x2F;&#x2F;pypi.doubanio.com&#x2F;simple&#x2F;第一种1) 创建一个项目django01(打开终端) django-admin startproject django012) 使用PyCharm打开项目并创建虚拟环境(依次输入以下) Terminal --&gt; python -m venv ven">
+    <meta name="keywords" content="Linux,Redis">
+    <meta name="description" content="Redis基本命令redis-server    启动redis服务器 save     保存 bgsave    后台保存(适用于数据量过大) flushdb        清空当前所在的数据库 flushall    清空所有数据库的数据 select N    切换数据库(默认开启16个数据库) shutdown nosave&#x2F;save    关闭Redis服务器(默认nosave) Red">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Django项目创建的三个方式">
-<meta property="og:url" content="http://yoursite.com/2019/12/31/Django%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E7%9A%84%E4%B8%89%E4%B8%AA%E6%96%B9%E5%BC%8F/index.html">
+<meta property="og:title" content="Redis的核心数据">
+<meta property="og:url" content="http://yoursite.com/2020/01/02/Redis%E7%9A%84%E6%A0%B8%E5%BF%83%E6%95%B0%E6%8D%AE/index.html">
 <meta property="og:site_name" content="yydafx">
-<meta property="og:description" content="安装Django： pip install django&#x3D;&#x3D;2.1.14 -i https:&#x2F;&#x2F;pypi.doubanio.com&#x2F;simple&#x2F;第一种1) 创建一个项目django01(打开终端) django-admin startproject django012) 使用PyCharm打开项目并创建虚拟环境(依次输入以下) Terminal --&gt; python -m venv ven">
+<meta property="og:description" content="Redis基本命令redis-server    启动redis服务器 save     保存 bgsave    后台保存(适用于数据量过大) flushdb        清空当前所在的数据库 flushall    清空所有数据库的数据 select N    切换数据库(默认开启16个数据库) shutdown nosave&#x2F;save    关闭Redis服务器(默认nosave) Red">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-12-31T12:39:21.277Z">
-<meta property="article:modified_time" content="2019-12-31T13:15:48.359Z">
+<meta property="article:published_time" content="2020-01-02T09:34:27.152Z">
+<meta property="article:modified_time" content="2020-01-02T09:45:41.795Z">
 <meta property="article:author" content="杨毓德">
-<meta property="article:tag" content="Django">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Redis">
 <meta name="twitter:card" content="summary">
     
     <link rel="shortcut icon" href="/favicon.ico">
@@ -121,7 +122,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Django项目创建的三个方式</div>
+        <div class="flex-col header-title ellipsis">Redis的核心数据</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -143,15 +144,15 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Django项目创建的三个方式</h1>
+        <h1 class="title">Redis的核心数据</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-12-31T12:39:21.277Z" itemprop="datePublished" class="page-time">
-  2019-12-31
+                <time datetime="2020-01-02T09:34:27.152Z" itemprop="datePublished" class="page-time">
+  2020-01-02
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Django/">Django</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li></ul>
 
             
         </h5>
@@ -168,21 +169,21 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第一种"><span class="post-toc-number">1.</span> <span class="post-toc-text">第一种</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第二种"><span class="post-toc-number">2.</span> <span class="post-toc-text">第二种</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第三种"><span class="post-toc-number">3.</span> <span class="post-toc-text">第三种</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#补充-对本地代码实施版本控制病史上传到版本控制器"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">补充(对本地代码实施版本控制病史上传到版本控制器)</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Redis基本命令"><span class="post-toc-number">1.</span> <span class="post-toc-text">Redis基本命令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Redis的核心数据"><span class="post-toc-number">2.</span> <span class="post-toc-text">Redis的核心数据</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-字符串"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1.字符串</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-哈希-表-hash"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2.哈希(表) - hash</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-列表"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">3.列表</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-集合-set"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">4.集合 - set</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5-有序集合-zset"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">5.有序集合 - zset</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#6-LBS应用"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">6.LBS应用</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-Django项目创建的三个方式"
+<article id="post-Redis的核心数据"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Django项目创建的三个方式</h1>
+        <h1 class="post-card-title">Redis的核心数据</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-12-31 20:39:21" datetime="2019-12-31T12:39:21.277Z"  itemprop="datePublished">2019-12-31</time>
+            <time class="post-time" title="2020-01-02 17:34:27" datetime="2020-01-02T09:34:27.152Z"  itemprop="datePublished">2020-01-02</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Django/">Django</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li></ul>
 
 
 
@@ -194,34 +195,63 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>安装Django：</p>
-<pre><code>pip install django==2.1.14 -i https://pypi.doubanio.com/simple/</code></pre><h4 id="第一种"><a href="#第一种" class="headerlink" title="第一种"></a>第一种</h4><p>1) 创建一个项目django01(打开终端)</p>
-<pre><code>django-admin startproject django01</code></pre><p>2) 使用PyCharm打开项目并创建虚拟环境(依次输入以下)</p>
-<pre><code>Terminal --&gt; python -m venv venv --&gt; &quot;venv install django==2.1.14&quot;</code></pre><p>3) 运行项目(两种运行方式)</p>
-<pre><code>~ python manage.py runserver
-~ Add Configuration --&gt; + --&gt; Python --&gt; Script Path manage.py --&gt; Parametes(runserver)</code></pre><h4 id="第二种"><a href="#第二种" class="headerlink" title="第二种"></a>第二种</h4><p>1) 用PyCharm创建一个普通python项目<br>2) 创建一个虚拟环境<br>3) 在虚拟环境中安装Django的依赖项</p>
-<pre><code>pip install django==2.1.14</code></pre><p>3) 把Python项目变为Django项目(千万别忘了最后的点)</p>
-<pre><code>django-admin startproject django02 .</code></pre><p>4) 运行项目</p>
-<pre><code>~ python manage.py runserver
-~ Add Configuration --&gt; + --&gt; Python --&gt; Script Path manage.py --&gt; Parametes(runserver)</code></pre><h4 id="第三种"><a href="#第三种" class="headerlink" title="第三种"></a>第三种</h4><p>1) 克隆项目到本地(两种方式)</p>
-<pre><code>~ 使用PyCharm的&quot;get from version control&quot;
-~ git clone git@gitee.com:yydafx/django02.git</code></pre><p>2) 创建虚拟环境<br>3) 重建依赖项</p>
-<pre><code>pip install -r requirements.txt</code></pre><h6 id="补充-对本地代码实施版本控制病史上传到版本控制器"><a href="#补充-对本地代码实施版本控制病史上传到版本控制器" class="headerlink" title="补充(对本地代码实施版本控制病史上传到版本控制器)"></a>补充(对本地代码实施版本控制病史上传到版本控制器)</h6><pre><code>准备工作：先创建一个Django项目
-    在Django根目录下创建两个文件：
-        a、依赖项文件(requirements.txt)
-            执行 pip freeze &gt; requirements.txt
+            <h3 id="Redis基本命令"><a href="#Redis基本命令" class="headerlink" title="Redis基本命令"></a>Redis基本命令</h3><pre><code>redis-server    启动redis服务器
+save     保存
+bgsave    后台保存(适用于数据量过大)
+flushdb        清空当前所在的数据库
+flushall    清空所有数据库的数据
+select N    切换数据库(默认开启16个数据库)
+shutdown nosave/save    关闭Redis服务器(默认nosave)</code></pre><hr>
+<h3 id="Redis的核心数据"><a href="#Redis的核心数据" class="headerlink" title="Redis的核心数据"></a>Redis的核心数据</h3><h4 id="1-字符串"><a href="#1-字符串" class="headerlink" title="1.字符串"></a>1.字符串</h4><pre><code>set key value    添加键值对
+mset key1 value1 key2 value2    添加多组键值对
 
-        b、忽略文件(.gitignore)
-进入到django项目的根目录下
-    git init  --&gt;    将普通文件变成版本仓库
-    git add .    --&gt;    将文件从工作区同步到暂存区
-    git commint -m &apos;提交信息&apos;    --&gt;    将文件提交到本地仓库
-    git remote add origin git@gitee.com:yydafx/django02.git    --&gt;    绑定远端仓库
-    git push -u origin master    --&gt;    将本地代码推到服务器
+get key        通过键查看值
+mget key1 key2    查看多个键对应的值
 
-    git status    --&gt;    查看...
-    git log    --&gt;    查看日志</code></pre><p>​<br>​    </p>
-<p>​<br>​<br>​<br>​<br>​<br>​    </p>
+strlen key        获取字符串的长度
+append key value    给字符串追加内容
+
+incr key    值加1
+incrby key value    值加上value
+decr key    值减1
+decrby key value    值减去value
+
+getrange key start end        获取字符串指定范围内的子串
+setrange key offset value        修改字符串指定位置的内容    </code></pre><h4 id="2-哈希-表-hash"><a href="#2-哈希-表-hash" class="headerlink" title="2.哈希(表) - hash"></a>2.哈希(表) - hash</h4><p><strong>hash就相当于python里面的字典</strong></p>
+<pre><code>hset key field value    添加hash类型键值对
+hmset key filed1 value1 filed2 value2    添加多组hash类型键值对
+hget key filed        查看hash类型字段对应的值
+hmget key filed1 filed2        获取hash类型多个字段对应的值
+hgetall key        获取hash类型所有的字段和对应的值
+hkeys key        获取hash类型所有的字段
+kvals key        获取hash类型所有的字段对应的值
+hexists key filed    判断hash类型某个字段是否存在
+
+type key    查看键对应的数据类型</code></pre><h4 id="3-列表"><a href="#3-列表" class="headerlink" title="3.列表"></a>3.列表</h4><pre><code>lpush key value1 value2 value3 ...    往左边添加元素
+rpush key value1 value2 value3 ...    往右边添加元素
+
+lindex key index    根据下标查看元素
+lrange key start end    查看列表指定范围的元素
+
+llen key    查看列表元素的个数
+
+lpop key    从左边移除一个元素
+rpop key    从右边移除一个元素
+lrem key N value    从列表删除N个value</code></pre><h4 id="4-集合-set"><a href="#4-集合-set" class="headerlink" title="4.集合 - set"></a>4.集合 - set</h4><pre><code>sadd key value1 value2 value3    添加元素
+srem key value    删除元素
+spop key    获取随机元素
+scard key    查看元素个数
+smembers key    查看所有元素
+sismember key value     查看集合中是否存在指定元素
+sinter key1 key2    求交集
+sunion key1 key2    求并集
+sdiff key1 key2        求差集</code></pre><h4 id="5-有序集合-zset"><a href="#5-有序集合-zset" class="headerlink" title="5.有序集合 - zset"></a>5.有序集合 - zset</h4><pre><code>zadd key score1 mem1 score2 mem2 ...    添加元素
+zrem key mem    删除元素
+zrange key start end    按score升序查看元素
+zrevrange key start end        按score降序查看元素
+zscore key mem     查看元素对应的score
+zincrby key score mem    修改元素的score值
+zcard key    查看集合长度</code></pre><h4 id="6-LBS应用"><a href="#6-LBS应用" class="headerlink" title="6.LBS应用"></a>6.LBS应用</h4><p><strong>Location-Based Service - 基于位置的服务</strong></p>
 
         </div>
 
@@ -230,7 +260,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-12-31T13:15:48.359Z" itemprop="dateUpdated">2019-12-31 21:15:48</time>
+    Last updated: <time datetime="2020-01-02T09:45:41.795Z" itemprop="dateUpdated">2020-01-02 17:45:41</time>
 </span><br>
 
 
@@ -254,7 +284,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/" rel="tag">Django</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li></ul>
 
 
             
@@ -264,7 +294,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/12/31/Django%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E7%9A%84%E4%B8%89%E4%B8%AA%E6%96%B9%E5%BC%8F/&title=《Django项目创建的三个方式》 — yydafx&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/01/02/Redis%E7%9A%84%E6%A0%B8%E5%BF%83%E6%95%B0%E6%8D%AE/&title=《Redis的核心数据》 — yydafx&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -274,22 +304,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/12/31/Django%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E7%9A%84%E4%B8%89%E4%B8%AA%E6%96%B9%E5%BC%8F/&title=《Django项目创建的三个方式》 — yydafx&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/01/02/Redis%E7%9A%84%E6%A0%B8%E5%BF%83%E6%95%B0%E6%8D%AE/&title=《Redis的核心数据》 — yydafx&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/31/Django%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E7%9A%84%E4%B8%89%E4%B8%AA%E6%96%B9%E5%BC%8F/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/01/02/Redis%E7%9A%84%E6%A0%B8%E5%BF%83%E6%95%B0%E6%8D%AE/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Django项目创建的三个方式》 — yydafx&url=http://yoursite.com/2019/12/31/Django%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E7%9A%84%E4%B8%89%E4%B8%AA%E6%96%B9%E5%BC%8F/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Redis的核心数据》 — yydafx&url=http://yoursite.com/2020/01/02/Redis%E7%9A%84%E6%A0%B8%E5%BF%83%E6%95%B0%E6%8D%AE/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/12/31/Django%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E7%9A%84%E4%B8%89%E4%B8%AA%E6%96%B9%E5%BC%8F/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/01/02/Redis%E7%9A%84%E6%A0%B8%E5%BF%83%E6%95%B0%E6%8D%AE/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -312,18 +342,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2019/12/31/vim%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/" id="post-prev" class="post-nav-link">
+      <a href="/2020/01/02/Linux%E5%AE%9E%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">vim的基本配置和使用</h4>
+        <h4 class="title">Linux实用的一些命令</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2019/12/31/Linux%E4%B8%8A%E5%9F%BA%E6%9C%AC%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" id="post-next" class="post-nav-link">
+      <a href="/2019/12/31/vim%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Linux上基本软件的安装</h4>
+        <h4 class="title">vim的基本配置和使用</h4>
       </a>
     </div>
   
@@ -421,7 +451,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/12/31/Django%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E7%9A%84%E4%B8%89%E4%B8%AA%E6%96%B9%E5%BC%8F/&title=《Django项目创建的三个方式》 — yydafx&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/01/02/Redis%E7%9A%84%E6%A0%B8%E5%BF%83%E6%95%B0%E6%8D%AE/&title=《Redis的核心数据》 — yydafx&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -431,22 +461,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/12/31/Django%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E7%9A%84%E4%B8%89%E4%B8%AA%E6%96%B9%E5%BC%8F/&title=《Django项目创建的三个方式》 — yydafx&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/01/02/Redis%E7%9A%84%E6%A0%B8%E5%BF%83%E6%95%B0%E6%8D%AE/&title=《Redis的核心数据》 — yydafx&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/31/Django%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E7%9A%84%E4%B8%89%E4%B8%AA%E6%96%B9%E5%BC%8F/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/01/02/Redis%E7%9A%84%E6%A0%B8%E5%BF%83%E6%95%B0%E6%8D%AE/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Django项目创建的三个方式》 — yydafx&url=http://yoursite.com/2019/12/31/Django%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E7%9A%84%E4%B8%89%E4%B8%AA%E6%96%B9%E5%BC%8F/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Redis的核心数据》 — yydafx&url=http://yoursite.com/2020/01/02/Redis%E7%9A%84%E6%A0%B8%E5%BF%83%E6%95%B0%E6%8D%AE/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/12/31/Django%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E7%9A%84%E4%B8%89%E4%B8%AA%E6%96%B9%E5%BC%8F/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/01/02/Redis%E7%9A%84%E6%A0%B8%E5%BF%83%E6%95%B0%E6%8D%AE/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -457,7 +487,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/12/31/Django%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E7%9A%84%E4%B8%89%E4%B8%AA%E6%96%B9%E5%BC%8F/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2020/01/02/Redis%E7%9A%84%E6%A0%B8%E5%BF%83%E6%95%B0%E6%8D%AE/" alt="微信分享二维码">
 </div>
 
 

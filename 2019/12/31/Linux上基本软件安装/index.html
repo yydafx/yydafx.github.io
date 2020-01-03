@@ -14,7 +14,7 @@
     
     
     
-    <title>Linux上基本软件的安装 | yyd</title>
+    <title>Linux上基本软件的安装 | yydafx</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
@@ -25,12 +25,12 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux上基本软件的安装">
 <meta property="og:url" content="http://yoursite.com/2019/12/31/Linux%E4%B8%8A%E5%9F%BA%E6%9C%AC%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/index.html">
-<meta property="og:site_name" content="yyd">
+<meta property="og:site_name" content="yydafx">
 <meta property="og:description" content="安装Python1)安装依赖项 yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel libffi-devel2)下载Python3源代码 wget https">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-12-31T12:30:27.380Z">
-<meta property="article:modified_time" content="2019-12-31T12:33:11.840Z">
-<meta property="article:author" content="yydafx">
+<meta property="article:modified_time" content="2020-01-02T10:00:12.389Z">
+<meta property="article:author" content="杨毓德">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="软件安装">
 <meta name="twitter:card" content="summary">
@@ -61,7 +61,7 @@
           <img src="/img/avatar.jpg">
         </a>
         <hgroup class="introduce">
-          <h5 class="nickname">yydafx</h5>
+          <h5 class="nickname">杨毓德</h5>
           <a href="mailto:2362941478@qq.com" title="2362941478@qq.com" class="mail">2362941478@qq.com</a>
         </hgroup>
       </div>
@@ -105,7 +105,7 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/custom"  >
+              <a href="/Links"  >
                 <i class="icon icon-lg icon-link"></i>
                 测试
               </a>
@@ -169,7 +169,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装Python"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装Python</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装Nginx"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装Nginx</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装MySQL"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装MySQL</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装Python"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装Python</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装Nginx"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装Nginx</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装Redis官方最新版"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装Redis官方最新版</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装git最新版"><span class="post-toc-number">4.</span> <span class="post-toc-text">安装git最新版</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装MySQL"><span class="post-toc-number">5.</span> <span class="post-toc-text">安装MySQL</span></a></li></ol>
         </nav>
     </aside>
 
@@ -208,7 +208,19 @@ tar -xvf Python-3.7.6.tar</code></pre><p>4)执行安装前的配置</p>
     export PATH </code></pre><h4 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h4><p>1)安装nginx</p>
 <pre><code>yum install -y nginx</code></pre><p>2)启动和关闭nginx</p>
 <pre><code>systemctl start nginx
-systemctl stop nginx</code></pre><h4 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h4><p>1)清除掉所有跟mariadb相关的东西 </p>
+systemctl stop nginx</code></pre><h4 id="安装Redis官方最新版"><a href="#安装Redis官方最新版" class="headerlink" title="安装Redis官方最新版"></a>安装Redis官方最新版</h4><p>1) 下载</p>
+<pre><code>wget http://download.redis.io/releases/redis-5.0.7.tar.gz</code></pre><p>2) 解压解归档</p>
+<pre><code>gunzip redis-5.0.7.tar.gz
+tar -xvf redis-5.0.7.tar</code></pre><p>3) 编译执行    </p>
+<pre><code>cd redis-5.0.7
+make &amp;&amp; make install</code></pre><h4 id="安装git最新版"><a href="#安装git最新版" class="headerlink" title="安装git最新版"></a>安装git最新版</h4><p>1) 下载资源包</p>
+<pre><code>wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.24.1.tar.xz</code></pre><p>2) 解压和解归档</p>
+<pre><code>xz -d git-2.24.1.tar.xz
+tar -xf git-2.24.1.tar</code></pre><p>3) 执行安装前的配置</p>
+<pre><code>cd git-2.24.1
+yum install -y curl libcurl-devel
+./configure --prefix=/usr/local</code></pre><p>4) 编译执行</p>
+<pre><code>make &amp;&amp; make install</code></pre><h4 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h4><p>1)清除掉所有跟mariadb相关的东西 </p>
 <pre><code>yum list installed | grep mariadb | awk &apos;{print $1}&apos; | xargs yum erase -y</code></pre><p>2)清理之前的数据和日志文件 </p>
 <pre><code>rm -rf /var/lib/mysql
 rm -f/var/log/mysqld.log</code></pre><p>3)下载MySQL官方提供的RPM包并解归档 </p>
@@ -231,7 +243,7 @@ alter user &apos;root&apos;@&apos;localhost&apos; identified by &apos;123456&apo
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-12-31T12:33:11.840Z" itemprop="dateUpdated">2019-12-31 20:33:11</time>
+    Last updated: <time datetime="2020-01-02T10:00:12.389Z" itemprop="dateUpdated">2020-01-02 18:00:12</time>
 </span><br>
 
 
@@ -240,8 +252,8 @@ alter user &apos;root&apos;@&apos;localhost&apos; identified by &apos;123456&apo
     
     <footer>
         <a href="http://yoursite.com">
-            <img src="/img/avatar.jpg" alt="yydafx">
-            yydafx
+            <img src="/img/avatar.jpg" alt="杨毓德">
+            杨毓德
         </a>
     </footer>
 </blockquote>
@@ -265,7 +277,7 @@ alter user &apos;root&apos;@&apos;localhost&apos; identified by &apos;123456&apo
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/12/31/Linux%E4%B8%8A%E5%9F%BA%E6%9C%AC%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/&title=《Linux上基本软件的安装》 — yyd&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/12/31/Linux%E4%B8%8A%E5%9F%BA%E6%9C%AC%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/&title=《Linux上基本软件的安装》 — yydafx&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -275,7 +287,7 @@ alter user &apos;root&apos;@&apos;localhost&apos; identified by &apos;123456&apo
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/12/31/Linux%E4%B8%8A%E5%9F%BA%E6%9C%AC%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/&title=《Linux上基本软件的安装》 — yyd&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/12/31/Linux%E4%B8%8A%E5%9F%BA%E6%9C%AC%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/&title=《Linux上基本软件的安装》 — yydafx&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -285,7 +297,7 @@ alter user &apos;root&apos;@&apos;localhost&apos; identified by &apos;123456&apo
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Linux上基本软件的安装》 — yyd&url=http://yoursite.com/2019/12/31/Linux%E4%B8%8A%E5%9F%BA%E6%9C%AC%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Linux上基本软件的安装》 — yydafx&url=http://yoursite.com/2019/12/31/Linux%E4%B8%8A%E5%9F%BA%E6%9C%AC%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -397,7 +409,7 @@ alter user &apos;root&apos;@&apos;localhost&apos; identified by &apos;123456&apo
         </p>
     </div>
     <div class="bottom">
-        <p><span>yydafx &copy; 2015 - 2020</span>
+        <p><span>杨毓德 &copy; 2015 - 2020</span>
             <span>
                 
                 Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
@@ -415,7 +427,7 @@ alter user &apos;root&apos;@&apos;localhost&apos; identified by &apos;123456&apo
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/12/31/Linux%E4%B8%8A%E5%9F%BA%E6%9C%AC%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/&title=《Linux上基本软件的安装》 — yyd&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/12/31/Linux%E4%B8%8A%E5%9F%BA%E6%9C%AC%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/&title=《Linux上基本软件的安装》 — yydafx&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -425,7 +437,7 @@ alter user &apos;root&apos;@&apos;localhost&apos; identified by &apos;123456&apo
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/12/31/Linux%E4%B8%8A%E5%9F%BA%E6%9C%AC%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/&title=《Linux上基本软件的安装》 — yyd&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/12/31/Linux%E4%B8%8A%E5%9F%BA%E6%9C%AC%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/&title=《Linux上基本软件的安装》 — yydafx&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -435,7 +447,7 @@ alter user &apos;root&apos;@&apos;localhost&apos; identified by &apos;123456&apo
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Linux上基本软件的安装》 — yyd&url=http://yoursite.com/2019/12/31/Linux%E4%B8%8A%E5%9F%BA%E6%9C%AC%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Linux上基本软件的安装》 — yydafx&url=http://yoursite.com/2019/12/31/Linux%E4%B8%8A%E5%9F%BA%E6%9C%AC%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

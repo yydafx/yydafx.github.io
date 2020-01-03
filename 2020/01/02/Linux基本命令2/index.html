@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Linux基本命令2 | yydafx</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Linux">
+    <meta name="description" content="1.进程相关指令1) ps指令ps        --&gt;    查看进程状态 ps -aux        --&gt; 查看当前所有的进程的信息 ps grep 进程名&#x2F;进程ID    --&gt; 根据进程名&#x2F;进程ID查看指定进程2)top指令top        --&gt; 实时查看当前所有的进程信息和系统信息 top -p  PID1,PID2,…        --&gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux基本命令2">
+<meta property="og:url" content="http://yoursite.com/2020/01/02/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A42/index.html">
+<meta property="og:site_name" content="yydafx">
+<meta property="og:description" content="1.进程相关指令1) ps指令ps        --&gt;    查看进程状态 ps -aux        --&gt; 查看当前所有的进程的信息 ps grep 进程名&#x2F;进程ID    --&gt; 根据进程名&#x2F;进程ID查看指定进程2)top指令top        --&gt; 实时查看当前所有的进程信息和系统信息 top -p  PID1,PID2,…        --&gt;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-01-02T11:35:29.244Z">
+<meta property="article:modified_time" content="2020-01-02T12:12:10.847Z">
+<meta property="article:author" content="杨毓德">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+	
+	
+
+
+<meta name="generator" content="Hexo 4.1.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">杨毓德</h5>
+          <a href="mailto:2362941478@qq.com" title="2362941478@qq.com" class="mail">2362941478@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yydafx" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/Links"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Linux基本命令2</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Linux基本命令2</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-01-02T11:35:29.244Z" itemprop="datePublished" class="page-time">
+  2020-01-02
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Linux/">Linux</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-进程相关指令"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.进程相关指令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#1-ps指令"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1) ps指令</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#2-top指令"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2)top指令</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#3-free指令"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3)free指令</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#4-kill指令"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">4)kill指令</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#5-uptime"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">5)uptime</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-用户管理"><span class="post-toc-number">2.</span> <span class="post-toc-text">2.用户管理</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-文件权限-chmod"><span class="post-toc-number">3.</span> <span class="post-toc-text">3.文件权限(chmod)</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#12-日志管理"><span class="post-toc-number">4.</span> <span class="post-toc-text">12.日志管理</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-结果的处理"><span class="post-toc-number">5.</span> <span class="post-toc-text">2)结果的处理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#a-管道"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">a. 管道(|)</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#b-sort：排序"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">b.sort：排序</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#c-uniq-去重"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">c.uniq   -去重</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#d-awk-获取列"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">d.awk  - 获取列</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3）输出重定向-gt-gt-gt"><span class="post-toc-number">6.</span> <span class="post-toc-text">3）输出重定向   -    &gt;&#x2F;&gt;&gt;</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-统计"><span class="post-toc-number">7.</span> <span class="post-toc-text">4)统计</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#5-查找"><span class="post-toc-number">8.</span> <span class="post-toc-text">5)查找</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#grep-找内容"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">grep   - 找内容</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#find-找文件"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">find   - 找文件</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#查指令"><span class="post-toc-number">8.3.</span> <span class="post-toc-text">查指令</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#13-网络管理"><span class="post-toc-number"></span> <span class="post-toc-text">13.网络管理</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#14-压缩和归档"><span class="post-toc-number"></span> <span class="post-toc-text">14.压缩和归档</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-归档和解归档-tar"><span class="post-toc-number">1.</span> <span class="post-toc-text">1)归档和解归档   - tar</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2）压缩和解压-gzip-gunzip-xz"><span class="post-toc-number">2.</span> <span class="post-toc-text">2）压缩和解压: gzip,gunzip,xz</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#a-gzip"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">a.gzip</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#b-gunzip"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">b.gunzip</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#c-xz"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">c.xz</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#15-软件安装和包管理工具"><span class="post-toc-number"></span> <span class="post-toc-text">15.软件安装和包管理工具</span></a>
+        </nav>
+    </aside>
+
+
+<article id="post-Linux基本命令2"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Linux基本命令2</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-01-02 19:35:29" datetime="2020-01-02T11:35:29.244Z"  itemprop="datePublished">2020-01-02</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Linux/">Linux</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h5 id="1-进程相关指令"><a href="#1-进程相关指令" class="headerlink" title="1.进程相关指令"></a>1.进程相关指令</h5><h6 id="1-ps指令"><a href="#1-ps指令" class="headerlink" title="1) ps指令"></a>1) ps指令</h6><pre><code>ps        --&gt;    查看进程状态
+ps -aux        --&gt; 查看当前所有的进程的信息
+ps grep 进程名/进程ID    --&gt; 根据进程名/进程ID查看指定进程</code></pre><h6 id="2-top指令"><a href="#2-top指令" class="headerlink" title="2)top指令"></a>2)top指令</h6><pre><code>top        --&gt; 实时查看当前所有的进程信息和系统信息
+top -p  PID1,PID2,…        --&gt;    实时监测指定的进程</code></pre><h6 id="3-free指令"><a href="#3-free指令" class="headerlink" title="3)free指令"></a>3)free指令</h6><pre><code>free    --&gt;    显示当前系统的内存信息，显示的时候以kb为单位
+free -单位    --&gt;    显示当前系统的内存信息，以指定单位来显示</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">free -m    - 显示当前系统的内存信息，以Mb为单位</span><br></pre></td></tr></table></figure>
+
+
+
+<h6 id="4-kill指令"><a href="#4-kill指令" class="headerlink" title="4)kill指令"></a>4)kill指令</h6><pre><code>kill 进程ID        --&gt;    杀掉指定id对应的进程
+kill -1/-9/-15 进程ID        --&gt;    以指定的方式(-1表示不间断重启; -9表示强制杀死进程；-15表示正常结束进程)杀掉指定进程
+
+pkill 进程名    --&gt;    杀死指定进程名对应的进程(中间可以加-1/-9/-15)
+killall 进程名        --&gt;    杀死和进程名相关的所有进程</code></pre><h6 id="5-uptime"><a href="#5-uptime" class="headerlink" title="5)uptime"></a>5)uptime</h6><pre><code>uptime        --&gt;    获取系统信息</code></pre><h5 id="2-用户管理"><a href="#2-用户管理" class="headerlink" title="2.用户管理"></a>2.用户管理</h5><p>一个Linux操作系统可以有多个用户(user)，也可以有多个用户组(group); 用户和用户组之间的关系是多对多</p>
+<pre><code>users        --&gt;    查看当前用户
+groups        --&gt;    查看当前分组
+
+groupadd  分组名        --&gt;    创建分组(管理员才能创建; 可以通过查看/etc/group文件来查看当前系统所有的分组)
+
+useradd  用户名        --&gt;    创建指定用户(1.用户创建成功后系统会自动在/home目录下创建一个和用户名同名的文件夹；2.会自动创建和用户名同名的分组，并且将当前用户添加到这个分组中)
+
+useradd -G  分组1,分组2,… 用户名    --&gt;    创建指定用户，并且将用户添加到指定分组中
+
+usermod -G  分组1,分组2  用户名    --&gt;    修改用户分组
+
+
+password 用户名        --&gt;    修改用户密码(需要root权限)
+su 用户名        --&gt;    切换账号(root登录的时候切换不需要密码，其他账号需要)
+exit        --&gt;    退出当前账号
+
+
+sudo    --&gt;    在命令前sudo是以管理员身份执行指令
+
+    注意:不是所有的用户都可以通过sudo来以管理员身份执行指令，如果想要能够使用sudo必须添加以下配置    ：
+        a.ubuntu:  将需要有管理员身份的账号添加到sudo分组中
+        b.redhat和contos: 在/etc/sudoers配置文件中添加代码：
+
+            ## Allow root to run any commands anywhere
+            root    ALL=(ALL)       ALL     #(默认有的)
+            xiaoming ALL=(ALL)      ALL        #(自己添加的，xiaoming是用户名)</code></pre><h5 id="3-文件权限-chmod"><a href="#3-文件权限-chmod" class="headerlink" title="3.文件权限(chmod)"></a>3.文件权限(chmod)</h5><ul>
+<li>默认情况下文件和文件夹的权限: 文件所有者有读写权限， 同组用户和其他用户都是只读权限。</li>
+</ul>
+<p>第一种：chmod 权限值 文件路径        –&gt;    将指定文件的权限修改成指定值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">权限：     rwx r-- rw-</span><br><span class="line">权限二进制：111 100 110  </span><br><span class="line">权限值:    7   4   6</span><br><span class="line">chmod 746 文件路径</span><br><span class="line"></span><br><span class="line">权限:     rwx rwx rwx</span><br><span class="line">权限值:    7    7  7</span><br><span class="line">chmod 777 文件路径</span><br></pre></td></tr></table></figure>
+
+
+<p>第二种：chmod  [a,u,g,o]/[+-]/[r,w,x] 文件地址        –&gt; 给指定文件对应指定用户添加或者删除指定权限</p>
+<pre><code>a-所有用户，u-文件所有者,g-同组用户,o-其他用户；
++表示添加权限， -表示删除权限;
+r-表示读权限, w表示写权限,x表示执行权限
+
+chmod a-x 文件地址     #  删除所有用户的执行权限
+chmod u+w  文件地址    #  给文件所有者添加写的权限</code></pre><h5 id="12-日志管理"><a href="#12-日志管理" class="headerlink" title="12.日志管理"></a>12.日志管理</h5><p>######1)显示文件内容</p>
+<p>a.cat指令   -  直接显示文件中所有的内容</p>
+<pre><code>cat 文件    -  直接查看文件所有内容
+总结: 查看文件内容的时候可以加参数-n，让内容在显示的时候显示行号</code></pre><p>b.查看部分内容</p>
+<pre><code>head N 文件地址        --&gt;    显示指定文件前N行内容(-n参数无效)
+
+tail N 文件地址        --&gt;    显示指定文件最后N行内容(-n参数无效)</code></pre><p>c.分页显示</p>
+<pre><code>less 文件        --&gt;    按页显示文件内容(通过快捷键控制内容显示过程； 文件内容不会打印到shell/终端里)
+
+less -N 文件    --&gt;    按页显示文件内容，每次翻页的时候翻N行
+
+more 文件        --&gt;    按页显示文件内容(通过快捷键控制内容显示过程； 文件内容会打印到shell/终端里)
+
+more -N 文件    --&gt;    按页显示文件内容，每次翻页的时候翻N行</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">快捷键:</span><br><span class="line"></span><br><span class="line">- 按 j 向下一行</span><br><span class="line"></span><br><span class="line">- 按 k 向上一行</span><br><span class="line"></span><br><span class="line">- 按 f 向下翻一页</span><br><span class="line"></span><br><span class="line">- 按b 向上翻一页</span><br><span class="line"></span><br><span class="line">- 按 g 到全文开头</span><br><span class="line"></span><br><span class="line">- 按 G 到全文结尾</span><br><span class="line"></span><br><span class="line">- 按 Q 退出</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="2-结果的处理"><a href="#2-结果的处理" class="headerlink" title="2)结果的处理"></a>2)结果的处理</h5><ul>
+<li>凡是有的打印结果的指令，我们都可以通过相关指令对应结果进行处理</li>
+</ul>
+<h6 id="a-管道"><a href="#a-管道" class="headerlink" title="a. 管道(|)"></a>a. 管道(|)</h6><ul>
+<li>如果需要对某一个指令的结果使用另外的指令进行二次处理的时候，就需要用到管道(|)</li>
+</ul>
+<h6 id="b-sort：排序"><a href="#b-sort：排序" class="headerlink" title="b.sort：排序"></a>b.sort：排序</h6><pre><code>sort    --&gt;    从小到大排序(将一行内容作为一个字符串，按字符串大小对应内容进行排序，默认不区分大小写)</code></pre><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">cat a.txt |sort      # 对a.txt的文件内容从小到大排序显示</span><br><span class="line"></span><br><span class="line">sort的参数:</span><br><span class="line">-r   - 逆序</span><br><span class="line">-nk 1  - 数值大小排序</span><br><span class="line">-nk 2  - 字符大小排序(默认)</span><br><span class="line"></span><br><span class="line">cat a.txt|sort -nk 1    # 对a.txt的文件内容按数字大小从小到大排序</span><br><span class="line">cat a.txt|sort -rnk 1    # 对a.txt的文件内容按数字大小从大到小排序</span><br><span class="line">cat a.txt|sort -nk 2    # 对a.txt的文件内容按字符大小从小到大排序(默认)</span><br><span class="line">cat a.txt|sort -rnk 2    # 对a.txt的文件内容按字符大小从大到小排序</span><br></pre></td></tr></table></figure>
+
+
+
+<h6 id="c-uniq-去重"><a href="#c-uniq-去重" class="headerlink" title="c.uniq   -去重"></a>c.uniq   -去重</h6><ul>
+<li>uniq    –&gt;    只能将紧挨着的相同行去掉重复的(如果需要去掉所有重复的行，先排序将相同的行放到一起)</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cat a.txt|uniq     # 去掉a.txt文件内容中相邻重复的行</span><br><span class="line">cat a.txt|sort|uniq   # 去掉a.txt文件内容中所有重复的行</span><br><span class="line"></span><br><span class="line">uniq的参数</span><br><span class="line">-c	--&gt;	重复次数</span><br></pre></td></tr></table></figure>
+
+
+
+<h6 id="d-awk-获取列"><a href="#d-awk-获取列" class="headerlink" title="d.awk  - 获取列"></a>d.awk  - 获取列</h6><ul>
+<li>awk ‘{print $N}’    –&gt;    获取内容中第N列的数据</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">history|awk '&#123;print $2&#125;'    # 获取历史记录第2列的内容</span><br><span class="line">history|awk '&#123;print $2,$3&#125;'  # 获取历史记录第2列和第3列的内容</span><br></pre></td></tr></table></figure>
+
+
+
+<p>练习:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">history |awk '&#123;print $4&#125;' |sort |uniq ‐c | sort ‐rnk 1 | head ‐n 3    # 统计最常用的3个指令及其使用次数</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="3）输出重定向-gt-gt-gt"><a href="#3）输出重定向-gt-gt-gt" class="headerlink" title="3）输出重定向   -    &gt;/&gt;&gt;"></a>3）输出重定向   -    &gt;/&gt;&gt;</h5><pre><code>执行有打印结果的指令  &gt;  文件地址     -  将指定指令执行的结果保存到指定文件中(先清除原文件内容再添加)
+
+执行有打印结果的指令  &gt;&gt;  文件地址    -  将指定指令执行的结果保存到指定文件中(直接将结果追加到原文件中)</code></pre><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">history &gt; a.txt     #将当前历史记录直接保存到a.txt文件中</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 将最常用的3个指令及其使用次数保存到a.txt文件中</span></span><br><span class="line">history |awk '&#123;print $4&#125;' |sort |uniq ‐c | sort ‐rnk 1 | head ‐n 3 &gt; a.txt</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="4-统计"><a href="#4-统计" class="headerlink" title="4)统计"></a>4)统计</h5><pre><code>wc -c/-w/-l 文件地址        - 统计指定文件中字符/单词/行的数量</code></pre><h5 id="5-查找"><a href="#5-查找" class="headerlink" title="5)查找"></a>5)查找</h5><h6 id="grep-找内容"><a href="#grep-找内容" class="headerlink" title="grep   - 找内容"></a>grep   - 找内容</h6><p>a.grep 内容 文件地址    –&gt;    在指定文件中查找指定内容(返回文件中所有包含指定内容的行)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">grep you a.txt    # 获取a.txt中包含you的所有的行</span><br><span class="line"></span><br><span class="line">grep的参数:</span><br><span class="line">-n      - 显示结果的时候显示行号</span><br><span class="line">-i      - 查找内容的时候忽略大小写</span><br><span class="line">-E      - 按正则表达式进行匹配   </span><br><span class="line">		  使用方法： grep -E '正则表达式' 文件</span><br><span class="line">		  注意: Linux操作系统中正则表达式不支持:\d,\D,\w,\W,\s,\S,\b,\B; 其他语法都支持</span><br><span class="line">-v      - 忽略字段</span><br><span class="line">		  grep you a.txt  -v  # 获取a.txt中不包含you的所有的行</span><br></pre></td></tr></table></figure>
+
+
+
+<p>b.  执行有打印结果的指令 |grep 内容      - 在指令执行结果中查找指定内容</p>
+<p>c. grep -r  内容 文件夹地址     -在指定文件夹中所有的文件中查找指定内容</p>
+<h6 id="find-找文件"><a href="#find-找文件" class="headerlink" title="find   - 找文件"></a>find   - 找文件</h6><pre><code>find 文件夹路径 -name 文件名    --&gt;    在指定文件夹下按文件名找指定文件</code></pre><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 找指定文件名</span></span><br><span class="line">find dir1 -name 'test1.py'      # 在文件夹dir1找名字是test1.py的文件</span><br><span class="line">find dir1 -name '*.txt'         # 在文件夹dir1找后缀是txt的所有文件</span><br><span class="line">find dir1 -name 'test*.txt'</span><br><span class="line">find dir1 -name 'test*'</span><br><span class="line">find dir1 -name '*c.txt'</span><br></pre></td></tr></table></figure>
+
+<p>find 文件夹路径 -size +/-文件大小    –&gt;    在指定文件夹下找文件大小满足条件的所有的文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">find dir1 -size +4k       # 查找在文件夹dir1中所有大于4k的文件</span><br><span class="line">find dir1 -size -4k       # 查找在文件夹dir1中所有小于4k的文件</span><br><span class="line">find dir1 -size +5k -size -10k  # 查找在文件夹dir1中所有大于5k并且小于10k的文件(文件大小如果是小数，算的时候向上取整)</span><br><span class="line">find dir1 -size +4k -name '*.txt'   # 查找在文件夹dir1中所有大于4k的txt文件</span><br></pre></td></tr></table></figure>
+
+
+
+<h6 id="查指令"><a href="#查指令" class="headerlink" title="查指令"></a>查指令</h6><pre><code>which 指令名        --&gt;    精确查找当前指令对应的文件的路径
+whereis 指令名        --&gt;    查找和指定指令相关的所有的文件的路径
+man 指令名            --&gt;    获取指定指令的使用手册
+指令名 — help        --&gt;    获取指定指令的帮助文档</code></pre><h4 id="13-网络管理"><a href="#13-网络管理" class="headerlink" title="13.网络管理"></a>13.网络管理</h4><pre><code>ifconfig    --&gt;    查看网卡状态
+netstat -natp    --&gt;    查看当前系统所有的网络连接状态
+netstat -natp |grep 端口号        --&gt;    查看指定端口对应网络连接状态
+
+ping 地址        --&gt;    给指定地址对应服务器发送数据(主要用来检测当前网络通不通)
+ping -i 时间(单位秒) 地址    --&gt;    每隔指定时间ping一次(时间可以是小数)
+ping -c 次数 地址        --&gt;    ping指定次数(不限制次数的时候会不断的ping)
+
+wget 地址        --&gt;    下载数据</code></pre><h4 id="14-压缩和归档"><a href="#14-压缩和归档" class="headerlink" title="14.压缩和归档"></a>14.压缩和归档</h4><ul>
+<li>压缩可以让文件变小，一般在需要传输前都会先对文件进行压缩。注意，压缩指令只针对文件有效，并且一次只能压缩一个文件。</li>
+</ul>
+<p>归档可以将一个文件夹变成一个文件(tar文件)</p>
+<h5 id="1-归档和解归档-tar"><a href="#1-归档和解归档-tar" class="headerlink" title="1)归档和解归档   - tar"></a>1)归档和解归档   - tar</h5><pre><code>tar -cvf 归档文件地址 需要归档的原文件地址        --&gt;    将文件进行归档操作(既可以对文件进行归档也可以对文件夹归档)
+tar -xvf 归档文件地址        --&gt;    将指定的归档文件解归档</code></pre><h5 id="2）压缩和解压-gzip-gunzip-xz"><a href="#2）压缩和解压-gzip-gunzip-xz" class="headerlink" title="2）压缩和解压: gzip,gunzip,xz"></a>2）压缩和解压: gzip,gunzip,xz</h5><h6 id="a-gzip"><a href="#a-gzip" class="headerlink" title="a.gzip"></a>a.gzip</h6><pre><code>gzip 文件地址        --&gt;    压缩指定文件(压缩后会生成一个gz文件，并且会删除原文件)
+gzip -c 文件地址 &gt; 压缩文件地址    --&gt;    将指定文件压缩指定位置，并且保留原文件(压缩重定向)
+gzip -d 压缩文件地址    --&gt;    解压指定文件(解压完成后会删除原压缩文件)
+gzip -l 压缩文件地址    --&gt;    列出压缩文件中的内容</code></pre><h6 id="b-gunzip"><a href="#b-gunzip" class="headerlink" title="b.gunzip"></a>b.gunzip</h6><pre><code>gunzip  压缩文件地址        --&gt;    解压指定文件(解压完成后会删除原压缩文件)</code></pre><h6 id="c-xz"><a href="#c-xz" class="headerlink" title="c.xz"></a>c.xz</h6><pre><code>xz 文件地址        --&gt;    压缩指定文件(压缩文件后缀是xz)
+xz -d 压缩文件地址    --&gt;    解压指定文件</code></pre><h3 id="15-软件安装和包管理工具"><a href="#15-软件安装和包管理工具" class="headerlink" title="15.软件安装和包管理工具"></a>15.软件安装和包管理工具</h3><p>包管理工具：yum </p>
+<pre><code>- yum search：搜索软件包，例如yum search nginx。
+- yum list installed：列出已经安装的软件包，例如yum list installed | grep zlib。
+- yum install：安装软件包，例如yum install nginx。
+- yum remove：删除软件包，例如yum remove nginx。
+- yum update：更新软件包，例如yum update可以更新所有软件包，而yum update tar只会更新tar。
+- yum check-update：检查有哪些可以更新的软件包。
+- yum info ：显示软件包的相关信息，例如yum info nginx。</code></pre>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2020-01-02T12:12:10.847Z" itemprop="dateUpdated">2020-01-02 20:12:10</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="杨毓德">
+            杨毓德
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/01/02/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A42/&title=《Linux基本命令2》 — yydafx&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/01/02/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A42/&title=《Linux基本命令2》 — yydafx&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/01/02/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A42/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Linux基本命令2》 — yydafx&url=http://yoursite.com/2020/01/02/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A42/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/01/02/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A42/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2020/01/02/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A41/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Linux基本命令1</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/yyd_wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/yyd_wechat.jpg" data-alipay="/img/yyd_alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>This blog is licensed under a <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>杨毓德 &copy; 2015 - 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/01/02/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A42/&title=《Linux基本命令2》 — yydafx&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/01/02/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A42/&title=《Linux基本命令2》 — yydafx&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/01/02/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A42/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Linux基本命令2》 — yydafx&url=http://yoursite.com/2020/01/02/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A42/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/01/02/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A42/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2020/01/02/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A42/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
